@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 
 @dataclass
@@ -10,14 +10,15 @@ class InfoMessage:
     distance: float
     speed: float
     calories: float
+    message: str = ('Тип тренировки: {training_type}; '
+                    'Длительность: {duration:.3f} ч.; '
+                    'Дистанция: {distance:.3f} км; '
+                    'Ср. скорость: {speed:.3f} км/ч; '
+                    'Потрачено ккал: {calories:.3f}')
 
     def get_message(self) -> str:
         """Вывести сообщение о результатах тренировки."""
-        return (f'Тип тренировки: {self.training_type}; '
-                f'Длительность: {self.duration:.3f} ч.; '
-                f'Дистанция: {self.distance:.3f} км; '
-                f'Ср. скорость: {self.speed:.3f} км/ч; '
-                f'Потрачено ккал: {self.calories:.3f}.')
+        return self.message.format(**asdict(self))
 
 
 class Training:
@@ -46,7 +47,8 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError
+        raise NotImplementedError(f'Переопредели метод в классе '
+                                  f'{self.__class__.__name__}.')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -73,6 +75,7 @@ class Running(Training):
 
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
+
     WEIGHT_MULTIPLIER = 0.035
     SECOND_WEIGHT_MULTIPLIER = 0.029
     HEIGHT_IN_M = 100
@@ -135,10 +138,9 @@ def read_package(workout_type: str, data: list) -> Training:
     workout_types_mapping = {'SWM': Swimming,
                              'RUN': Running,
                              'WLK': SportsWalking}
-    if workout_type == 'SWM' or 'RUN' or 'WLK':
+    if workout_type in workout_types_mapping:
         return workout_types_mapping[workout_type](*data)
-    else:
-        return KeyError
+    raise KeyError('Такого типа тренировки не существует')
 
 
 def main(training: Training) -> None:
