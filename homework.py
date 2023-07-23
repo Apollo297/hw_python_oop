@@ -10,7 +10,7 @@ class InfoMessage:
     distance: float
     speed: float
     calories: float
-    message: str = ('Тип тренировки: {training_type}; '
+    MESSAGE: str = ('Тип тренировки: {training_type}; '
                     'Длительность: {duration:.3f} ч.; '
                     'Дистанция: {distance:.3f} км; '
                     'Ср. скорость: {speed:.3f} км/ч; '
@@ -18,7 +18,7 @@ class InfoMessage:
 
     def get_message(self) -> str:
         """Вывести сообщение о результатах тренировки."""
-        return self.message.format(**asdict(self))
+        return self.MESSAGE.format(**asdict(self))
 
 
 class Training:
@@ -47,8 +47,8 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError(f'Переопредели метод в классе '
-                                  f'{self.__class__.__name__}.')
+        raise NotImplementedError(f'Переопредели метод "get_spent_calories()" '
+                                  f'в классе {self.__class__.__name__}.')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -140,7 +140,7 @@ def read_package(workout_type: str, data: list) -> Training:
                              'WLK': SportsWalking}
     if workout_type in workout_types_mapping:
         return workout_types_mapping[workout_type](*data)
-    raise KeyError('Такого типа тренировки не существует')
+    raise ValueError('Такого типа тренировки не существует.')
 
 
 def main(training: Training) -> None:
