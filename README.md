@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 Запустите скрипт:
 ```python
-python main.py
+python homework.py
 ```
 ## Пример вывода:
 Тип тренировки: Swimming; Длительность: 1.000 ч.; Дистанция: 0.993 км; Ср. скорость: 0.993 км/ч; Потрачено ккал: 279.024.</br>
