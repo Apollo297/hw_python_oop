@@ -39,7 +39,6 @@ pip install -r requirements.txt
 Тип тренировки: SportsWalking; Длительность: 1.000 ч.; Дистанция: 5.850 км; Ср. скорость: 5.850 км/ч; Потрачено ккал: 425.250.
 
 ## Стек:
-1. ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
- - Основной язык программирования.
+1. ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) - Основной язык программирования.
 2. Dataclasses
 3. Стандартная библиотека Python.
