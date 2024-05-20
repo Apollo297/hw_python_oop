@@ -19,7 +19,7 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 ```python
-git clone https://github.com/Apollo297/hw_python_oop.git 
+git clone git@github.com:Apollo297/hw_python_oop.git 
 ```
 ```python
 cd hw_python_oop
