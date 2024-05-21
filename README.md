@@ -49,5 +49,8 @@ python homework.py
 
 ## Стек:
 1. ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) - Основной язык программирования;
-2. ![Dataclasses](https://img.shields.io/badge/Dataclasses-555555?style=for-the-badge) - Для создания классов;
-3. ![Standard Library](https://img.shields.io/badge/Standard%20Library-555555?style=for-the-badge) - Для работы с вводом/выводом и обработки данных.
+2. ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+3. ![image](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+4. ![image](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+5. ![Dataclasses](https://img.shields.io/badge/Dataclasses-555555?style=for-the-badge) - Для создания классов;
+6. ![Standard Library](https://img.shields.io/badge/Standard%20Library-555555?style=for-the-badge) - Для работы с вводом/выводом и обработки данных.
